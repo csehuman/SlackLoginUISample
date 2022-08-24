@@ -27,6 +27,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Next"/>
+                                        <connections>
+                                            <segue destination="WF7-GM-0u4" kind="show" identifier="emailSegue" id="lYd-H0-nhG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -111,6 +114,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="93.75"/>
+        </scene>
+        <!--Email View Controller-->
+        <scene sceneID="IH1-4g-AhB">
+            <objects>
+                <viewController id="WF7-GM-0u4" customClass="EmailViewController" customModule="SlackLoginPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q3A-pk-AJl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="F0S-yJ-2ft"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cqe-vo-eDx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aJs-CW-fAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1728" y="94"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gDS-u6-FJ7">

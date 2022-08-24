@@ -13,6 +13,7 @@
 		DA8CDD2028B6039F008334FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8CDD1E28B6039F008334FC /* Main.storyboard */; };
 		DA8CDD2228B603A0008334FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA8CDD2128B603A0008334FC /* Assets.xcassets */; };
 		DA8CDD2528B603A0008334FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA8CDD2328B603A0008334FC /* LaunchScreen.storyboard */; };
+		DA8CDD2D28B66514008334FC /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8CDD2C28B66514008334FC /* EmailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DA8CDD2128B603A0008334FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA8CDD2428B603A0008334FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA8CDD2628B603A0008334FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA8CDD2C28B66514008334FC /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				DA8CDD2128B603A0008334FC /* Assets.xcassets */,
 				DA8CDD2328B603A0008334FC /* LaunchScreen.storyboard */,
 				DA8CDD2628B603A0008334FC /* Info.plist */,
+				DA8CDD2C28B66514008334FC /* EmailViewController.swift */,
 			);
 			path = SlackLoginPractice;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				DA8CDD1D28B6039F008334FC /* ViewController.swift in Sources */,
 				DA8CDD1928B6039F008334FC /* AppDelegate.swift in Sources */,
 				DA8CDD1B28B6039F008334FC /* SceneDelegate.swift in Sources */,
+				DA8CDD2D28B66514008334FC /* EmailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
