@@ -59,6 +59,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL" returnKeyType="go"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Fy3-i9-TgG"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Slack workspace URL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xwl-rf-7mz">
                                         <rect key="frame" x="20" y="344" width="160" height="15"/>
@@ -97,6 +100,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Qo-ZD-om0"/>
+                    <connections>
+                        <outlet property="nextButton" destination="Tzq-Pl-9Rl" id="0RO-ND-lI1"/>
+                        <outlet property="placeholderLabel" destination="gDx-jp-pNg" id="xyu-f5-Tza"/>
+                        <outlet property="placeholderLeadingConstraint" destination="Z2r-X5-fPx" id="Vi4-oO-eyT"/>
+                        <outlet property="urlField" destination="5XT-uo-SA8" id="68w-m2-01l"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
