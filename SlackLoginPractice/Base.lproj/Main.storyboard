@@ -122,8 +122,76 @@
                     <view key="view" contentMode="scaleToFill" id="q3A-pk-AJl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCI-Gk-bGJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hW4-No-iAZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="X9A-Cn-Dy5"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Prev"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="VWK-TN-7Ku"/>
+                                    <constraint firstAttribute="bottom" secondItem="hW4-No-iAZ" secondAttribute="bottom" id="Wxw-KI-HNA"/>
+                                    <constraint firstItem="hW4-No-iAZ" firstAttribute="leading" secondItem="VCI-Gk-bGJ" secondAttribute="leading" id="bFs-wS-bL9"/>
+                                    <constraint firstItem="hW4-No-iAZ" firstAttribute="top" secondItem="VCI-Gk-bGJ" secondAttribute="top" id="g6l-XU-KDq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgM-nA-xeK">
+                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35x-p2-xWe">
+                                        <rect key="frame" x="20" y="369" width="374" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RGA-js-GY2">
+                                        <rect key="frame" x="20" y="359" width="374" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="qTM-Up-4yX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erq-ek-J3f">
+                                        <rect key="frame" x="20" y="344" width="115" height="15"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="RGA-js-GY2" firstAttribute="top" secondItem="erq-ek-J3f" secondAttribute="bottom" id="CmH-92-2Xx"/>
+                                    <constraint firstItem="erq-ek-J3f" firstAttribute="leading" secondItem="RGA-js-GY2" secondAttribute="leading" id="HTa-sy-YmU"/>
+                                    <constraint firstItem="35x-p2-xWe" firstAttribute="centerY" secondItem="RGA-js-GY2" secondAttribute="centerY" id="M2M-yk-XwJ"/>
+                                    <constraint firstItem="RGA-js-GY2" firstAttribute="leading" secondItem="wgM-nA-xeK" secondAttribute="leading" constant="20" id="WKE-a6-f16"/>
+                                    <constraint firstAttribute="trailing" secondItem="RGA-js-GY2" secondAttribute="trailing" constant="20" id="bpS-eV-UaN"/>
+                                    <constraint firstItem="35x-p2-xWe" firstAttribute="trailing" secondItem="RGA-js-GY2" secondAttribute="trailing" id="iFO-J4-SbL"/>
+                                    <constraint firstItem="35x-p2-xWe" firstAttribute="height" secondItem="RGA-js-GY2" secondAttribute="height" multiplier="0.5" id="idJ-Hp-T0M"/>
+                                    <constraint firstItem="RGA-js-GY2" firstAttribute="centerY" secondItem="wgM-nA-xeK" secondAttribute="centerY" id="rGe-ao-4MX"/>
+                                    <constraint firstItem="35x-p2-xWe" firstAttribute="leading" secondItem="RGA-js-GY2" secondAttribute="leading" id="vt9-lG-nf8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="F0S-yJ-2ft"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VCI-Gk-bGJ" firstAttribute="top" secondItem="F0S-yJ-2ft" secondAttribute="top" id="078-V4-OsK"/>
+                            <constraint firstItem="F0S-yJ-2ft" firstAttribute="bottom" secondItem="wgM-nA-xeK" secondAttribute="bottom" id="0YS-Fd-vMz"/>
+                            <constraint firstItem="F0S-yJ-2ft" firstAttribute="trailing" secondItem="VCI-Gk-bGJ" secondAttribute="trailing" id="32e-YO-2L7"/>
+                            <constraint firstItem="VCI-Gk-bGJ" firstAttribute="leading" secondItem="F0S-yJ-2ft" secondAttribute="leading" id="3HE-g1-O82"/>
+                            <constraint firstItem="wgM-nA-xeK" firstAttribute="top" secondItem="VCI-Gk-bGJ" secondAttribute="bottom" id="BD2-AG-S9r"/>
+                            <constraint firstItem="wgM-nA-xeK" firstAttribute="leading" secondItem="F0S-yJ-2ft" secondAttribute="leading" id="MRR-oJ-8lp"/>
+                            <constraint firstItem="F0S-yJ-2ft" firstAttribute="trailing" secondItem="wgM-nA-xeK" secondAttribute="trailing" id="c43-0C-sMA"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cqe-vo-eDx"/>
                 </viewController>
