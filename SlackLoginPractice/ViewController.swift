@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         return cs.inverted
     }()
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var urlField: UITextField!
     
     @IBOutlet weak var placeholderLabel: UILabel!
@@ -24,11 +26,48 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
     
+    var tokens =  [NSObjectProtocol]()
+    
+    deinit {
+        tokens.forEach {
+            NotificationCenter.default.removeObserver($0)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        urlField.becomeFirstResponder()
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        var token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { [weak self] noti in
+            if let frameValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                let keyboardFrame = frameValue.cgRectValue
+                
+                self?.bottomConstraint.constant = keyboardFrame.size.height
+                
+                UIView.animate(withDuration: 0.3) {
+                    self?.view.layoutIfNeeded()
+                } completion: { finished in
+                    UIView.setAnimationsEnabled(true)
+                }
+            }
+        }
+        tokens.append(token)
+        
+        token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main) { [weak self] noti in
+            self?.bottomConstraint.constant = 0
+            
+            UIView.animate(withDuration: 0.3) {
+                self?.view.layoutIfNeeded()
+            }
+        }
+        tokens.append(token)
     }
 
 
@@ -36,6 +75,11 @@ class ViewController: UIViewController {
 
 
 extension ViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        UIView.setAnimationsEnabled(false)
+    }
+    
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         print(">>>>", textField.text)
         
