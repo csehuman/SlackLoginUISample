@@ -133,6 +133,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Prev"/>
+                                        <connections>
+                                            <action selector="movePrevious:" destination="WF7-GM-0u4" eventType="touchUpInside" id="Hi3-qw-EZV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -159,6 +162,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="WF7-GM-0u4" id="565-Ts-OHd"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erq-ek-J3f">
                                         <rect key="frame" x="20" y="344" width="115" height="15"/>
@@ -194,6 +200,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cqe-vo-eDx"/>
+                    <connections>
+                        <outlet property="emailField" destination="RGA-js-GY2" id="3aV-RW-F6h"/>
+                        <outlet property="placeholderLabel" destination="35x-p2-xWe" id="u5Y-lV-NDL"/>
+                        <outlet property="titleLabel" destination="erq-ek-J3f" id="uJO-mY-w2i"/>
+                        <outlet property="titleLabelBottomConstraint" destination="CmH-92-2Xx" id="cEi-rH-OYW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJs-CW-fAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
