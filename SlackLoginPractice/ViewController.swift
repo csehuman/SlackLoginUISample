@@ -28,7 +28,8 @@ class ViewController: UIViewController {
     
     var tokens =  [NSObjectProtocol]()
     
-    deinit {
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         tokens.forEach {
             NotificationCenter.default.removeObserver($0)
         }
@@ -38,13 +39,6 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         urlField.becomeFirstResponder()
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        nextButton.isEnabled = false
         
         var token = NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: OperationQueue.main) { [weak self] noti in
             if let frameValue = noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
@@ -70,8 +64,20 @@ class ViewController: UIViewController {
         }
         tokens.append(token)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? EmailViewController {
+            vc.bottomMargin = bottomConstraint.constant
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        nextButton.isEnabled = false
+    }
 
-
+    var presented = false
 }
 
 
@@ -87,12 +93,16 @@ extension ViewController: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        UIView.setAnimationsEnabled(false)
+        if !presented {
+            UIView.setAnimationsEnabled(false)
+            presented = true
+        }
     }
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         print(">>>>", textField.text)
+        print(range)
         
         if string.count > 0 {
             guard string.rangeOfCharacter(from: charSet) == nil else {
